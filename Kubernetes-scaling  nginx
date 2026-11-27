@@ -1,0 +1,19 @@
+minikube start
+
+kubectl create deployment nginx --image=nginx
+
+kubectl expose deployment nginx --type=NodePort --port=80
+
+kubectl get deployments
+
+kubectl get pods
+
+kubectl get services
+
+minikube service nginx --url
+
+kubectl scale deployment nginx --replicas=4
+
+kubectl get pods
+
+kubectl scale deployment nginx --replicas=2

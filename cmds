@@ -1,0 +1,8 @@
+docker build -t mywebsite .
+
+docker run -d -p 8080:80 --name mycontainer mywebsite
+
+docker ps
+
+http://localhost:8080
+

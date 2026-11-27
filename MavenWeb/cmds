@@ -1,0 +1,88 @@
+mvn clean package
+
+Maven Web Application using Eclipse
+Step 1: Open Eclipse
+1. Open Eclipse IDE.
+2. Select your workspace.
+3. Click Launch.
+Step 2: Create Maven Project
+1. Click File → New → Other.
+2. Expand Maven.
+3. Select Maven Project.
+4. Click Next.
+5. Tick Create a simple project (skip archetype selection).
+6. Click Next.
+Enter these details:
+Field	Value
+Group Id	com.example
+Artifact Id	MavenWeb
+Version	1.0
+Packaging	war
+
+
+Click Finish.
+Step 3: Configure pom.xml
+Open pom.xml.
+
+Replace its contents with:
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>MavenWeb</artifactId>
+    <version>1.0</version>
+
+    <packaging>war</packaging>
+
+</project>
+
+Save using Ctrl + S.
+Step 4: Create HTML file
+1. Right-click the project.
+2. Select New → Folder.
+3. Name it src/main/webapp.
+If src/main already exists, create only the webapp folder inside it.
+4. Right-click webapp.
+5. Select New → HTML File.
+6. Name it index.html.
+Paste:
+<html>
+<body>
+    <h1>Hello Maven Web Application!</h1>
+    <p>My first Maven Web Project.</p>
+</body>
+</html>
+
+Save it.
+Step 5: Build the project
+1. Right-click MavenWeb.
+2. Select Run As → Maven build...
+3. In Goals, enter:
+clean package
+
+4. Click Run.
+Wait for:
+BUILD SUCCESS
+
+Step 6: Deploy using Tomcat
+You need Apache Tomcat configured in Eclipse.
+1. Open the Servers tab.
+2. Right-click → New → Server.
+3. Select Apache → Tomcat v10.1 Server.
+4. Select your extracted Tomcat installation directory.
+5. Click Finish.
+6. Right-click the server → Add and Remove.
+7. Add MavenWeb.
+8. Click Finish.
+9. Right-click the server → Start.
+Step 7: View final output
+Open your browser:
+http://localhost:8080/MavenWeb/
+
+Expected output:
+
+Hello Maven Web Application!

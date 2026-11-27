@@ -1,0 +1,8 @@
+in MavenProject folder
+
+mvn compile
+
+mvn package
+
+java -cp target/classes App
+
